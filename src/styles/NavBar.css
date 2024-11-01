@@ -1,0 +1,30 @@
+/* Navbar */
+.navbar {
+  margin-left: 250px;
+  top: 0;
+  right: 0;
+  width: calc(100% - 250px); /* Điều chỉnh lại chiều rộng để không làm hẹp navbar */
+  z-index: 1000;
+}
+
+.navbar-nav {
+  display: -webkit-inline-box;
+  justify-content: flex-start; /* Đẩy các mục sang bên trái */
+  align-items: center;
+  width: 100%;
+}
+
+.nav-item {
+  margin-left: 1rem; /* Khoảng cách hợp lý giữa các mục */
+}
+
+.nav-link {
+  color: #343a40;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #007bff;
+  text-decoration: underline;
+}

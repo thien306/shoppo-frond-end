@@ -1,0 +1,65 @@
+/* ProductCreate.css */
+
+/* Container for image previews */
+.image-previews {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  /* Each image and delete button wrapper */
+  .image-previews div {
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for each image */
+  .image-previews img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 1px;
+    margin-left: 10px;
+}
+  
+  .image-previews button {
+    position: absolute;
+    top: -14px;
+    right: -16px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+  .image-previews button:hover {
+    background-color: darkred;
+  }
+  
+  .image-previews button {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.modal-zoom {
+  z-index: 1056; /* Giá trị cao hơn giá trị mặc định của Bootstrap (1050) */
+}
+
+.modal-backdrop.zoom-backdrop {
+  z-index: 1055; /* Đảm bảo backdrop của modal phóng to cũng nằm trên modal thêm mới */
+}
+

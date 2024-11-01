@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Sidebar from '..//src//page/Sidebar';
+import Navbar from '..//src//page/Navbar';
+import HomeProduct from "../src/component/admin/product/HomeProduct"
+import HomeCategories from "../src/component/admin/categories/HomeCategories"
+import HomeSubCategory from './component/admin/subCategory/HomeSubCategory';
+import Dashboard from "../src/page/Dashboard"
+import HomeColors from './component/utilities/HomeColors';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ProductDetail from './component/admin/product/ProductDetail';
+import HomeBrands from '../src/component/utilities/HomeBrands'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+      <ToastContainer />
+
+        <Sidebar />
+        <div className="content">
+          <Navbar />
+          <Routes>
+
+            <Route path="" element={<Dashboard />} />
+            <Route path="/admin/dashboard" element={<Dashboard />} />
+
+            <Route path="" element={<HomeProduct />} />
+            <Route path="/admin/homeProducts" element={<HomeProduct />} />
+
+            <Route path="" element={<ProductDetail />} />
+            <Route path="/admin/productDetail" element={<ProductDetail />} />
+
+            <Route path="" element={<HomeCategories />} />
+            <Route path="/admin/homeCategories" element={<HomeCategories />} />
+
+            <Route path="" element={<HomeSubCategory />} />
+            <Route path="/admin/homeSubCategory" element={<HomeSubCategory />} />
+
+            <Route path="" element={<HomeColors />} />
+            <Route path="/admin/utilities/colors" element={<HomeColors />} />
+
+            <Route path="" element={<HomeBrands />} />
+            <Route path="/admin/utilities/brands" element={<HomeBrands />} />
+          </Routes>
+
+        </div>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
